@@ -1,0 +1,10 @@
+# conda 环境一键创建: conda env create -f environment.yml
+# 激活: conda activate yolo-det
+name: yolo-det
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - pip
+  - pip:
+      - -r requirements.txt

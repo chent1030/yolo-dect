@@ -1,0 +1,13 @@
+# YOLO 检测平台后端依赖（pip / conda 环境）
+# 用法: pip install -r requirements.txt
+# 注意: torch 默认从 PyPI 安装；NVIDIA 服务器如需匹配特定 CUDA 版本，
+#       先按 https://docs.ultralytics.com/quickstart/ 单独安装 torch/torchvision，
+#       再执行本文件（pip 会保留已装的 torch）。
+
+fastapi>=0.141
+uvicorn[standard]>=0.52
+ultralytics>=8.4.121
+python-multipart>=0.0.32
+pyyaml>=6.0
+pandas>=3.0
+gitpython>=3.1

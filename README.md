@@ -16,10 +16,12 @@
 ## 快速开始
 
 ```bash
-# 后端 (Python 3.13, uv 管理)
+# 后端 (Python 3.13, conda + pip 管理)
 cd backend
-uv sync                                   # 创建 venv 并安装依赖
-uv run uvicorn app.main:app --port 8000   # 启动服务
+conda env create -f environment.yml        # 一键创建（或: conda create -n yolo-det python=3.13）
+conda activate yolo-det
+pip install -r requirements.txt            # 已有环境时直接装依赖
+uvicorn app.main:app --port 8000           # 启动服务
 
 # 前端 (Node 18+)
 cd frontend
@@ -94,8 +96,8 @@ models:
 
 ## 部署到 NVIDIA 服务器
 
-1. 服务器安装 [uv](https://docs.astral.sh/uv/)、CUDA 环境与 **ffmpeg**（标注视频转 H.264 用，无 ffmpeg 时输出 mp4v）
-2. `cd backend && uv sync`，CUDA 版 torch 需按 [ultralytics 指南](https://docs.ultralytics.com/quickstart/) 选择对应索引源安装
+1. 服务器安装 **conda**（Miniconda/Anaconda 均可）、CUDA 环境与 **ffmpeg**（标注视频转 H.264 用，无 ffmpeg 时输出 mp4v）
+2. `cd backend && conda env create -f environment.yml && conda activate yolo-det`；CUDA 版 torch 需按 [ultralytics 指南](https://docs.ultralytics.com/quickstart/) 选择对应索引源安装（先装 torch 再 `pip install -r requirements.txt`，pip 会保留已装的 torch）
 3. `config.yaml` 设 `device: cuda`、`half: true`（可选），`max_loaded_models` 按显存加大
 4. 前端 `npm run build` 后用任意静态服务器托管 `dist/`，并把 `/api` 反代到后端 8000 端口
 

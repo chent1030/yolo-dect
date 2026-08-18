@@ -1,0 +1,11 @@
+description: 演示场景（COCO 预训练模型，含 v5/v8 两种引擎、det/seg/pose 三种任务）
+models:
+  yolov8n.pt:
+    description: YOLOv8n 目标检测
+  yolov8n-seg.pt:
+    description: YOLOv8n 实例分割
+  yolov8n-pose.pt:
+    description: YOLOv8n 姿态估计
+  yolov5s.pt:
+    description: YOLOv5s 目标检测（v5 引擎适配验证）
+    conf: 0.3

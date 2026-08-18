@@ -1,0 +1,22 @@
+# YOLO 检测服务配置
+# 权重目录约定: weights/<场景名>/<模型>.pt，场景内可选放 scene.yaml 覆盖描述/默认参数
+weights_dir: weights
+
+# 推理设备: auto(自动探测 cuda>mps>cpu) / cuda / mps / cpu
+device: auto
+
+# 最多同时常驻内存的模型数（LRU 淘汰），按显存/内存调整
+max_loaded_models: 2
+
+# 权重目录重扫描周期（秒），新丢入的模型自动注册
+rescan_interval_sec: 30
+
+# FP16 推理（仅 cuda 设备生效）
+half: false
+
+# 推理参数默认值（前端可逐次覆盖）
+infer:
+  conf: 0.25
+  iou: 0.7
+  imgsz: 640
+  max_det: 300

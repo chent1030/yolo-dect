@@ -16,9 +16,6 @@ __pycache__/
 *.engine
 !backend/weights/demo/*.pt
 
-# yolov5 本地仓库（部署时按 README 克隆）
-backend/third_party/
-
 # 视频分析任务输出
 backend/outputs/
 

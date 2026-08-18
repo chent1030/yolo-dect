@@ -1,0 +1,5 @@
+本目录内置 ultralytics/yolov5 仓库副本（已去除 .git，作为普通代码跟踪），用于 YOLOv5 权重的 torch.hub 加载。
+
+来源:   https://github.com/ultralytics/yolov5
+提交:   b39f6d4eedc2313185b5c0224b75fda3bfdd6829 (2026-08-16, master 浅克隆)
+更新:   rm -rf yolov5 && git clone --depth 1 https://github.com/ultralytics/yolov5 yolov5 && rm -rf yolov5/.git

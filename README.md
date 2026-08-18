@@ -21,9 +21,6 @@ cd backend
 uv sync                                   # 创建 venv 并安装依赖
 uv run uvicorn app.main:app --port 8000   # 启动服务
 
-# 首次部署 v5 支持需克隆 yolov5 仓库（已包含则跳过）
-git clone --depth 1 https://github.com/ultralytics/yolov5 third_party/yolov5
-
 # 前端 (Node 18+)
 cd frontend
 npm install

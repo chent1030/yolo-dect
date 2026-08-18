@@ -19,6 +19,9 @@ __pycache__/
 # 视频分析任务输出
 backend/outputs/
 
+# yolov5 内置仓库的运行产物（仓库本身已入库）
+backend/third_party/yolov5/runs/
+
 # 上传临时文件
 yolo_upload_*
 
